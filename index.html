@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allan Khisa – Developer</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6A2bXHkYgI3AzOG7vT6hfI8XbGOBqBI9a07lmFz3k8r2Vx5nLE8QGisgMFWb7Upvg6VDjqfOn0i0Y4dKgQeA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Dark-theme override for Contact section only -->
+  <style>
+    .section--contact {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 4rem 2rem;
+    }
+    .section--contact .contact__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .section--contact .contact__details p,
+    .section--contact .contact__details a {
+      color: #f0f0f0;
+    }
+    .section--contact .contact__details a:hover {
+      text-decoration: underline;
+    }
+    .section--contact .contact__socials a {
+      margin-right: 1rem;
+      color: #f0f0f0;
+    }
+    .section--contact .contact__socials a:hover {
+      color: #bbb;
+    }
+    .section--contact .contact__form input,
+    .section--contact .contact__form textarea {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      color: #333;
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+    }
+    .section--contact .contact__form input::placeholder,
+    .section--contact .contact__form textarea::placeholder {
+      color: #666;
+    }
+    .section--contact .contact__form input:focus,
+    .section--contact .contact__form textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+    .section--contact .btn--secondary {
+      background-color: #007bff;
+      color: #ffffff;
+      border: 1px solid #007bff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .section--contact .btn--secondary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    }
+    .section--contact .contact__form {
+      flex: 1;
+      min-width: 300px;
+    }
+    .section--contact .contact__details {
+      flex: 1;
+      min-width: 250px;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <!-- ====== Back-to-Top Button ====== -->
+  <button id="backToTop" aria-label="Back to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ====== Sidebar ====== -->
+  <aside class="sidebar">
+    <div class="sidebar__header">
+      <img
+        src="assets/images/profile.jpeg"
+        alt="Allan Khisa"
+        class="profile__img"
+      />
+      <h2 class="profile__name">Allan Khisa</h2>
+      <p class="profile__role">Full-Stack Developer</p>
+    </div>
+
+    <!-- Dark/Light Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <nav class="sidebar__nav">
+      <ul>
+        <li><a href="#home"><i class="fa-solid fa-house fa-lg"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="fa-solid fa-user fa-lg"></i><span>About</span></a></li>
+        <li><a href="#projects"><i class="fa-solid fa-diagram-project fa-lg"></i><span>Projects</span></a></li>
+        <li><a href="#testimonials"><i class="fa-solid fa-star fa-lg"></i><span>Testimonials</span></a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope fa-lg"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__social">
+      <a href="https://github.com/allankhisa" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/allan-khisa" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://twitter.com/allankhisa" target="_blank" aria-label="Twitter">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle (visible <768px) -->
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </aside>
+
+  <!-- ====== Main Content ====== -->
+  <main class="content">
+    <!-- Home Section -->
+    <section id="home" class="section section--home reveal">
+      <div class="home__inner">
+        <div class="home__text">
+          <h1>Hi, I'm <span>Allan Khisa</span></h1>
+          <p>
+            I build fast, scalable web applications using modern technologies
+            like React, Node.js, and Python. Welcome!
+          </p>
+        </div>
+        <div class="home__img-wrapper">
+          <img
+            src="assets/images/profile.jpeg"
+            alt="Allan Khisa"
+            class="home__img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Skills Section -->
+    <section id="about" class="section section--about reveal">
+      <h2 class="section__title">My Skills</h2>
+      <div class="about__inner">
+        <div class="about__text">
+          <p>
+            I am a <strong>Full-Stack Developer</strong> with over 5 years of
+            experience crafting web applications that not only delight users but
+            also scale effortlessly. My core competencies include:
+          </p>
+          <ul class="about__skills">
+            <li><i class="fa-brands fa-html5"></i> HTML5 &amp; CSS3</li>
+            <li><i class="fa-brands fa-square-js"></i> JavaScript (ES6+)</li>
+            <li><i class="fa-brands fa-react"></i> React &amp; Redux</li>
+            <li><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</li>
+            <li><i class="fa-brands fa-python"></i> Python (Flask / Django)</li>
+            <li><i class="fa-brands fa-docker"></i> Docker &amp; DevOps</li>
+          </ul>
+        </div>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__number">100+</span>
+            <span class="stat__label">Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">80+</span>
+            <span class="stat__label">Happy Clients</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">5</span>
+            <span class="stat__label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section--projects reveal">
+      <h2 class="section__title">Selected Projects</h2>
+      <div class="projects__grid">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          <img
+            src="assets/images/project1.jpg"
+            alt="Project One Screenshot"
+            class="project-card__img"
+          />
+          <div class="project-card__info">
+            <h3>TaskMaster App</h3>
+            <p>
+              A productivity web app built with React, Node.js, and MongoDB.
+              Real-time updates, intuitive UI.
+            </p>
+            <a
+              href="https://github.com/allankhisa/taskmaster"
+              target="_blank"
+              class="project-card__link"
+            >
+              
+            </a>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="project-card">
+          <img
+            src="assets/images/project2.png"
+            alt="Project Two Screenshot"
+            class="project-card__img"
+          />
+          <div class="project-card__info">
+            <h3>E-Commerce API</h3>
+            <p>
+              RESTful API powering a complete e-commerce backend using Node.js,
+              Express, and PostgreSQL. Secure, performant, tested.
+            </p>
+            <a
+              href="https://github.com/allankhisa/ecommerce-api"
+              target="_blank"
+              class="project-card__link"
+            >
+              
+            
+            </a>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="project-card">
+          <img
+            src="assets/images/project3.png"
+            alt="Project Three Screenshot"
+            class="project-card__img"
+          />
+          <div class="project-card__info">
+            <h3>Portfolio CMS</h3>
+            <p>
+              Headless CMS for managing portfolio content, built with Flask and
+              SQLite. Easy admin interface, JWT auth, REST endpoints.
+            </p>
+            <a
+              href="https://github.com/allankhisa/portfolio-cms"
+              target="_blank"
+              class="project-card__link"
+            >
+             
+            
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section--testimonials reveal">
+      <h2 class="section__title">Testimonials</h2>
+      <div class="testimonials__grid">
+        <div class="testimonial">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial__text">
+            "Allan delivered an outstanding web application that exceeded our
+            expectations. His attention to detail and timely delivery made all
+            the difference."
+          </p>
+          <h3 class="testimonial__author">Chris Juma</h3>
+          <span class="testimonial__role">CEO, Ihub</span>
+        </div>
+        <div class="testimonial">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial__text">
+            "Working with Allan was a pleasure. He translated our requirements
+            into a beautiful, responsive site and provided helpful documentation
+            every step of the way."
+          </p>
+          <h3 class="testimonial__author">Rebecca Lowe</h3>
+          <span class="testimonial__role">CEO, Cumberland Writing Co.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (now dark) -->
+    <section id="contact" class="section section--contact reveal">
+      <h2 class="section__title">Get In Touch</h2>
+      <div class="contact__inner">
+        <div class="contact__details">
+          <p>
+            <i class="fa-solid fa-location-dot"></i> Nairobi, Kenya
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i> +254 740 897 584
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:allankhisa55@gmail.com">allankhisa55@gmail.com</a>
+          </p>
+          <div class="contact__socials">
+            <a
+              href="https://github.com/allankhisa"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/allan-khisa"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://twitter.com/allankhisa"
+              target="_blank"
+              aria-label="Twitter"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <form
+          class="contact__form"
+          action="/action_page.php"
+          method="POST"
+          target="_blank"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn--secondary">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer reveal">
+      <p>&copy; 2025 <strong>Allan Khisa</strong>. All rights reserved.</p>
+      <div class="footer__credit">Designed &amp; Built by Me</div>
+    </footer>
+  </main>
+
+  <!-- Optional JS for animations, theme toggle, and scroll-spy -->
+  <script src="js/script.js"></script>
+</body>
+</html>
